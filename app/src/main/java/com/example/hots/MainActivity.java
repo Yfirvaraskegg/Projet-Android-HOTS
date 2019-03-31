@@ -1,12 +1,17 @@
 package com.example.hots;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -24,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    textViewResult = findViewById(R.id.text_view_result);
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -40,18 +44,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Persos>> call, Response<List<Persos>> response) {
                 if (!response.isSuccessful()){
-
                     return;
                 }
                 List<Persos> persos = response.body();
-                for (Persos perso : persos){
-                    String content = "";
-                    content += "Nom : " +perso.getNom() + "\n";
-                    content += "Univers : " +perso.getUnivers() + "\n";
-                    content += "Rôle: " +perso.getRole() + "\n";
-                    content += "Difficulté : " +perso.getDifficulte() + "\n\n";
-                    textViewResult.append(content);
-                }
+                //Attaching the adapter to a ListView
+                // Construct the data source
+                ArrayList<Persos> arrayOfUsers = new ArrayList<Persos>();
+                // Create the adapter to convert the array to views
+                UsersAdapter adapter = new UsersAdapter(MainActivity.this, arrayOfUsers);
+                // Attach the adapter to a ListView
+                ListView listView = (ListView) findViewById(R.id.list_char);
+                listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Persos list_row = persos.get(position);
+                        //Intent bigFlagIntent = new Intent( getApplicationContext( ), BigImage.class );
+                    }
+                });
+                adapter.addAll(persos);
             }
 
             @Override
