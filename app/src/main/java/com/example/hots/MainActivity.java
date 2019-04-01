@@ -22,9 +22,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView textViewResult;
-    
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getApplicationContext(),HeroActivity.class);
-                        intent.putExtra("tvName", );
+                        intent.putExtra("tvName",persos.get(i).getNom());
                         startActivity(intent);
-
                     }
                 });
                 adapter.addAll(persos);
