@@ -1,6 +1,7 @@
 package com.example.hots;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,9 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 listView.setAdapter(adapter);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Persos list_row = persos.get(position);
-                        //Intent bigFlagIntent = new Intent( getApplicationContext( ), BigImage.class );
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getApplicationContext(),HeroActivity.class);
+                        intent.putExtra("tvName", );
+                        startActivity(intent);
+
                     }
                 });
                 adapter.addAll(persos);
