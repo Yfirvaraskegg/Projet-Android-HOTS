@@ -12,18 +12,18 @@ import com.squareup.picasso.Picasso;
 
 public class HeroActivity extends AppCompatActivity {
     TextView heroNom;
-    ImageView imageView;
+    ImageView banniere;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hero_activity);
         heroNom = findViewById(R.id.nomHero);
-        imageView = findViewById(R.id.imageView);
+        banniere = findViewById(R.id.banniere);
         Intent intent = getIntent();
         String receivedName =  intent.getStringExtra("tvName");
-        Picasso.get().load("https://blzmedia-a.akamaihd.net/heroes/cardPortraits/alexstrasza.jpg").into(imageView);
-
+        String banniere_url = intent.getStringExtra("banniere_url");
+        Picasso.get().load(banniere_url).into(banniere);
         heroNom.setText(receivedName);
         //enable back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

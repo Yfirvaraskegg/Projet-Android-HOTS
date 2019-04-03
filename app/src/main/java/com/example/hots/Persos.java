@@ -24,6 +24,35 @@ public class Persos {
     private String ultime2;
     private String descriptionu2;
 
+    public String getUnivers0() {
+        return univers0;
+    }
+
+    public String getRole0() {
+        return role0;
+    }
+
+    private String nom0;
+    private String univers0;
+    private String role0;
+
+    public String getDescriptionp() {
+        return descriptionp;
+    }
+
+    public String getDescriptionu1() {
+        return descriptionu1;
+    }
+
+    public String getDescriptionu2() {
+        return descriptionu2;
+    }
+
+    public String getNom0() {
+        return nom0;
+    }
+
+
     @SerializedName("body")
     private String talent1;
 
@@ -72,12 +101,6 @@ public class Persos {
     }
     public String getUltime2() {
         return ultime2;
-    }
-    public String getDescriptionUltime1() {
-        return descriptionu1;
-    }
-    public String getDescriptionUltime2() {
-        return descriptionu2;
     }
     public Persos(String nom, String univers, String role){
         this.nom=nom;

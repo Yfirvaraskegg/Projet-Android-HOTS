@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getApplicationContext(),HeroActivity.class);
                         intent.putExtra("tvName",persos.get(i).getNom());
+                        intent.putExtra("banniere_url",persos.get(i).getNom0());
+
                         startActivity(intent);
                     }
                 });
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Persos>> call, Throwable t) {
+
             }
         });
 
