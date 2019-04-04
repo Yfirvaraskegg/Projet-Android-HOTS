@@ -7,22 +7,51 @@ public class Persos {
     private String univers;
     private String role;
     private String difficulte;
-
     private String talent2;
     private String talent3;
-
+    private String talent3_0;
+    private String talent2_0;
+    private String talent1_0;
+    private String ultime1_0;
+    private String ultime2_0;
     private String description1;
     private String description2;
-    private String description3;
 
+    public String getTalent3_0() {
+        return talent3_0;
+    }
+
+    public String getTalent2_0() {
+        return talent2_0;
+    }
+
+    public String getTalent1_0() {
+        return talent1_0;
+    }
+
+    public String getUltime1_0() {
+        return ultime1_0;
+    }
+
+    public String getUltime2_0() {
+        return ultime2_0;
+    }
+
+    private String description3;
+    private String nom0;
+    private String univers0;
+    private String role0;
     private String passif;
     private String descriptionp;
-
     private String ultime1;
     private String descriptionu1;
-
     private String ultime2;
     private String descriptionu2;
+    private String passif0;
+
+    public String getPassif0() {
+        return passif0;
+    }
 
     public String getUnivers0() {
         return univers0;
@@ -32,9 +61,7 @@ public class Persos {
         return role0;
     }
 
-    private String nom0;
-    private String univers0;
-    private String role0;
+
 
     public String getDescriptionp() {
         return descriptionp;

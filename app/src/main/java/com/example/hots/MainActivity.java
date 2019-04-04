@@ -59,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(),HeroActivity.class);
                         intent.putExtra("tvName",persos.get(i).getNom());
                         intent.putExtra("banniere_url",persos.get(i).getNom0());
+                        intent.putExtra("passiveImg",persos.get(i).getPassif0());
+                        intent.putExtra("descriptionpa",persos.get(i).getDscriptionP());
+                        intent.putExtra("roleimg",persos.get(i).getRole0());
+                        intent.putExtra("talent1p",persos.get(i).getTalent1_0());
+                        intent.putExtra("talent2p",persos.get(i).getTalent2_0());
+                        intent.putExtra("talent3p",persos.get(i).getTalent3_0());
+                        intent.putExtra("ultime1p",persos.get(i).getUltime1_0());
+                        intent.putExtra("ultime2p",persos.get(i).getUltime2_0());
+                        intent.putExtra("universurl",persos.get(i).getUnivers0());
+                        intent.putExtra("charUnivers",persos.get(i).getUnivers());
+                        intent.putExtra("charRole",persos.get(i).getRole());
 
                         startActivity(intent);
                     }
