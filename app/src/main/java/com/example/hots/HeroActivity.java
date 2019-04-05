@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 public class HeroActivity extends AppCompatActivity {
     TextView heroNom;
@@ -21,15 +24,23 @@ public class HeroActivity extends AppCompatActivity {
 
     TextView talent1;
     ImageView talent1_0;
-    TextView desc1;
+    TextView description1;
 
+    TextView talent2;
     ImageView talent2_0;
+    TextView description2;
 
+    TextView talent3;
     ImageView talent3_0;
+    TextView description3;
 
     ImageView ultime1_0;
+    TextView ultime1;
+    TextView descriptionu1;
 
     ImageView ultime2_0;
+    TextView ultime2;
+    TextView descriptionu2;
 
     TextView roletxt;
     TextView universtxt;
@@ -45,14 +56,23 @@ public class HeroActivity extends AppCompatActivity {
 
         talent1 = findViewById(R.id.talent1);
         talent1_0=findViewById(R.id.talent1_0);
+        description1=findViewById(R.id.description1);
 
+        talent2 = findViewById(R.id.talent2);
         talent2_0=findViewById(R.id.talent2_0);
+        description2=findViewById(R.id.description2);
 
-        talent3_0 = findViewById(R.id.talent3_0);
+        talent3 = findViewById(R.id.talent3);
+        talent3_0=findViewById(R.id.talent3_0);
+        description3=findViewById(R.id.description3);
 
         ultime1_0 = findViewById(R.id.ultime1_0);
+        ultime1=findViewById(R.id.ultime1);
+        descriptionu1=findViewById(R.id.descriptionu1);
 
         ultime2_0 = findViewById(R.id.ultime2_0);
+        ultime2=findViewById(R.id.ultime2);
+        descriptionu2=findViewById(R.id.descriptionu2);
 
         passif0 = findViewById(R.id.passif0);
         passif = findViewById(R.id.passif);
@@ -68,8 +88,8 @@ public class HeroActivity extends AppCompatActivity {
 
         String talent1p =  intent.getStringExtra("talent1p");
         String description =  intent.getStringExtra("description");
-        String talent1txt =  intent.getStringExtra("talent1");
-        Picasso.get().load(talent1p).into(talent1_0);
+        String talent1Nom =  intent.getStringExtra("talent1");
+        Picasso.get().load(talent1p).transform(new RoundedCornersTransformation(10,5)).into(talent1_0);
 
 
 
@@ -84,32 +104,52 @@ public class HeroActivity extends AppCompatActivity {
         String descriptionpa =  intent.getStringExtra("descriptionpa");
         String passift =  intent.getStringExtra("passift");
         String passiveUrl = intent.getStringExtra("passiveImg");
-        Picasso.get().load(passiveUrl).into(passif0);
+        Picasso.get().load(passiveUrl).transform(new RoundedCornersTransformation(10,5)).into(passif0);
 
         String talent2p =  intent.getStringExtra("talent2p");
-        Picasso.get().load(talent2p).into(talent2_0);
+        String description2t =  intent.getStringExtra("description2");
+        String talent2Nom =  intent.getStringExtra("talent2");
+        Picasso.get().load(talent2p).transform(new RoundedCornersTransformation(10,5)).into(talent2_0);
 
         String talent3p =  intent.getStringExtra("talent3p");
-        Picasso.get().load(talent3p).into(talent3_0);
+        String description3t =  intent.getStringExtra("description3");
+        String talent3Nom =  intent.getStringExtra("talent3");
+        Picasso.get().load(talent3p).transform(new RoundedCornersTransformation(10,5)).into(talent3_0);
 
         String ultime1p =  intent.getStringExtra("ultime1p");
-        Picasso.get().load(ultime1p).into(ultime1_0);
+        String descriptionu1t =  intent.getStringExtra("descriptionu1");
+        String ultime1Nom =  intent.getStringExtra("ultime1");
+        Picasso.get().load(ultime1p).transform(new RoundedCornersTransformation(10,5)).into(ultime1_0);
 
         String ultime2p =  intent.getStringExtra("ultime2p");
-        Picasso.get().load(ultime2p).into(ultime2_0);
+        String descriptionu2t =  intent.getStringExtra("descriptionu2");
+        String ultime2Nom =  intent.getStringExtra("ultime2");
+        Picasso.get().load(ultime2p).transform(new RoundedCornersTransformation(10,5)).into(ultime2_0);
 
         String charRole =  intent.getStringExtra("charRole");
         String roleUrl = intent.getStringExtra("roleimg");
-        Picasso.get().load(roleUrl).into(rolep);
+        Picasso.get().load(roleUrl).transform(new RoundedCornersTransformation(10,5)).into(rolep);
 
         roletxt.setText(charRole);
         universtxt.setText(charUnivers);
         descriptionp.setText(descriptionpa);
         heroNom.setText(receivedName);
         passif.setText(passift);
+//        Log.d("test",talent1Nom);
+        talent1.setText(talent1Nom);
+        description1.setText(description);
 
-        talent1.setText(talent1txt);
+        talent2.setText(talent2Nom);
+        description2.setText(description2t);
 
+        talent3.setText(talent3Nom);
+        description3.setText(description3t);
+
+        ultime1.setText(ultime1Nom);
+        descriptionu1.setText(descriptionu1t);
+
+        ultime2.setText(ultime2Nom);
+        descriptionu2.setText(descriptionu2t);
         //enable back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
