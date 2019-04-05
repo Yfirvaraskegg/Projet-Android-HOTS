@@ -2,7 +2,7 @@
 
 # Projet android : HOTS
 
-
+/!\ J'ai essayé sur plusieurs machines mais je n'arrive pas à faire fonctionner l'APK. /!\
 
 **Présentation** :
 
