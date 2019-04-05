@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupWindowAnimations();
+
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -58,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(getApplicationContext(),HeroActivity.class);
                         intent.putExtra("tvName",persos.get(i).getNom());
-                        intent.putExtra("banniere_url",persos.get(i).getNom0());
+                        intent.putExtra("banniere_url",persos.get(i).getBanniere());
 
                         intent.putExtra("passift",persos.get(i).getPassif());
                         intent.putExtra("passiveImg",persos.get(i).getPassif0());
@@ -66,15 +70,24 @@ public class MainActivity extends AppCompatActivity {
 
 
                         intent.putExtra("talent1p",persos.get(i).getTalent1_0());
-                        intent.putExtra("talent",persos.get(i).getTalent1());
+                        intent.putExtra("talent1",persos.get(i).getTalent1());
+                        intent.putExtra("description",persos.get(i).getDescription1());
 
                         intent.putExtra("talent2p",persos.get(i).getTalent2_0());
+                        intent.putExtra("talent2",persos.get(i).getTalent2());
+                        intent.putExtra("description2",persos.get(i).getDescription2());
 
                         intent.putExtra("talent3p",persos.get(i).getTalent3_0());
+                        intent.putExtra("talent3",persos.get(i).getTalent3());
+                        intent.putExtra("description3",persos.get(i).getDescription3());
 
                         intent.putExtra("ultime1p",persos.get(i).getUltime1_0());
+                        intent.putExtra("ultime1",persos.get(i).getUltime1());
+                        intent.putExtra("descriptionu1",persos.get(i).getDescriptionu1());
 
                         intent.putExtra("ultime2p",persos.get(i).getUltime2_0());
+                        intent.putExtra("ultime2",persos.get(i).getUltime2());
+                        intent.putExtra("descriptionu2",persos.get(i).getDescriptionu2());
 
                         intent.putExtra("univers0",persos.get(i).getUnivers0());
                         intent.putExtra("charUnivers",persos.get(i).getUnivers());
@@ -94,5 +107,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void setupWindowAnimations() {
+        Slide slide = (Slide) TransitionInflater.from(this).inflateTransition(R.transition.activity_slide);
+        getWindow().setExitTransition(slide);
     }
 }

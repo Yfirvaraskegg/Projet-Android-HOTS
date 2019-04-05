@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 
 public interface HotsInterface {
 
-    @GET("listedespersonnages")
+    @GET("listeperso")
     Call<List<Persos>> getPersos();
 }

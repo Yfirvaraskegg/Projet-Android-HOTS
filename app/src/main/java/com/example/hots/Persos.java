@@ -16,6 +16,11 @@ public class Persos {
     private String ultime2_0;
     private String description1;
     private String description2;
+    private String banniere;
+
+    public String getBanniere() {
+        return banniere;
+    }
 
     public String getTalent3_0() {
         return talent3_0;
@@ -46,7 +51,7 @@ public class Persos {
     private String ultime1;
     private String descriptionu1;
     private String ultime2;
-    private String descriptionu2;
+    private String description_u2;
     private String passif0;
 
     public String getPassif0() {
@@ -72,16 +77,17 @@ public class Persos {
     }
 
     public String getDescriptionu2() {
-        return descriptionu2;
+        return description_u2;
     }
 
     public String getNom0() {
         return nom0;
     }
-
-
-    @SerializedName("body")
     private String talent1;
+
+    public String getTalent1() {
+        return talent1;
+    }
 
     public String getNom() {
         return nom;
@@ -99,9 +105,6 @@ public class Persos {
         return difficulte;
     }
 
-    public String getTalent1() {
-        return talent1;
-    }
     public String getTalent2() {
         return talent2;
     }
