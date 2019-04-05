@@ -41,7 +41,7 @@ C'est une application qui liste les personnages du MOBA (Multiplayer Online Batt
 ](https://lh3.googleusercontent.com/Xw2T23m4ZVFTH-UaV3Z0oiw5r5LhGkEbwzW0uoi1iR7cEqGDAbVMVVHenvNugIidqBI16ZckRpM6nA "hots2")![
 ](https://lh3.googleusercontent.com/4-M6uKHFAwuFl6IpPHyw0MkC_e2uhOfMVJbWoCG8UeFfooCGtltq4pdp3Oyj-m6_HKjLxZKriKcSgA "hots3")
 
-**Amélioration futures :** 
+**Améliorations futures :** 
 
  - Rajouter une barre de recherche et une fonction pour trier les rôles et les univers.
  - Rajouter des vidéos montrant comment marche les talents, trait et ultimes. 
